@@ -9,18 +9,27 @@ import { PlantaService } from '../planta.service';
 })
 export class PlantaListComponent implements OnInit {
 
-  plantas: Array<Planta> = [];
+  plantas: Planta[] = [];
+  loading:boolean = false;
+  error:boolean = false
 
-  constructor(private plantaService: PlantaService) { }
+  constructor(public plantaService: PlantaService) { }
 
-  getPlantas(): void {
-    this.plantaService.getPlantas().subscribe((plantas) => {
-      this.plantas = plantas;
-    });
-  }
-
-  ngOnInit() {
-    this.getPlantas();
+  ngOnInit(): void {
+    this.plantaService.getPlantas().subscribe({
+      next: (plantas) => {
+        const plantasCollection:Planta[] = []
+        for (const planta of plantas){
+          plantasCollection.push(new Planta(planta))
+        }
+        this.plantas = plantasCollection;
+      },
+      error: () => {
+        this.error = true
+      }
+    }).add(() => {
+      this.loading = false
+    })
   }
 
 }

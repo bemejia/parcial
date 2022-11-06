@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlantaListComponent } from './planta-list/planta-list.component';
-import { PlantaTipoPipe } from './planta-list/planta-tipo.pipe';
+import { PlantaTiposPipe } from './planta-list/planta-tipos.pipe';
 
 
 @NgModule({
   declarations: [
     PlantaListComponent,
-    PlantaTipoPipe
+    PlantaTiposPipe
   ],
   imports: [
     CommonModule

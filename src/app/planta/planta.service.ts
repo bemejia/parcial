@@ -10,7 +10,7 @@ import { Planta } from './planta';
 })
 export class PlantaService {
 
-  private apiUrl: string = environment.requestUrl + 'plantas';
+  private apiUrl: string = environment.requestUrl;
 
   constructor(private http: HttpClient) { }
 

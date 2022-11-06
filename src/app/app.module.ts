@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { PlantaModule } from './planta/planta.module';
 import {PlantaListComponent} from "./planta/planta-list/planta-list.component";
 import {RouterModule} from "@angular/router";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -21,7 +22,9 @@ import {RouterModule} from "@angular/router";
     RouterModule.forRoot([
       {path: '', component: PlantaListComponent},
     ]),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+
 
   ],
   providers: [],

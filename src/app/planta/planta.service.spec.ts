@@ -21,7 +21,7 @@ describe('PlantaService', () => {
         expect(Array.isArray(plantas)).toBeTrue();
         for (const planta of plantas){
           expect(planta.id).toBeTruthy()
-          expect(planta.nombreComun).toBeTruthy()
+          expect(planta.nombre_comun).toBeTruthy()
           expect(planta.tipo).toBeTruthy()
           expect(planta.clima).toBeTruthy()
           expect(planta.imagen).toBeTruthy()

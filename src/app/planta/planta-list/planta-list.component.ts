@@ -18,6 +18,7 @@ export class PlantaListComponent implements OnInit {
   ngOnInit(): void {
     this.plantaService.getPlantas().subscribe({
       next: (plantas) => {
+        console.log(plantas)
         const plantasCollection:Planta[] = []
         for (const planta of plantas){
           plantasCollection.push(new Planta(planta))

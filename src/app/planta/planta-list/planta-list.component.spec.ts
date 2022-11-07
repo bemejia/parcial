@@ -7,7 +7,7 @@ import { PlantaListComponent } from './planta-list.component';
 import {faker} from "@faker-js/faker";
 import {generatePlantas} from "../planta-help";
 import {HttpClientModule} from "@angular/common/http";
-import {PlantaTipoPipe} from "./planta-tipo.pipe";
+import {PlantaTiposPipe} from "./planta-tipos.pipe";
 import { throwError } from 'rxjs';
 import {PlantaService} from "../planta.service";
 
@@ -19,7 +19,7 @@ describe('PlantaListComponent', () => {
   const generatedPlantas = generatePlantas(fakePlantas);
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlantaListComponent, PlantaTipoPipe ],
+      declarations: [ PlantaListComponent, PlantaTiposPipe ],
       imports: [HttpClientModule]
     })
     .compileComponents();
@@ -77,7 +77,7 @@ describe('PlantaListComponent', () => {
 
     for (const planta of component.plantas){
       expect(planta.id).toBeTruthy()
-      expect(planta.nombreComun).toBeTruthy()
+      expect(planta.nombre_comun).toBeTruthy()
       expect(planta.tipo).toBeTruthy()
       expect(planta.clima).toBeTruthy()
       expect(planta.imagen).toBeTruthy()

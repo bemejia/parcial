@@ -10,7 +10,7 @@ export function generatePlantas(quantity:number):Planta[]
   for (let i = 1; i <= quantity; i++) {
     plantas.push(new Planta({
       id: i,
-      nombreComun: faker.lorem.word(),
+      nombre_comun: faker.lorem.word(),
       tipo: faker.lorem.word(),
       clima: faker.lorem.word(),
       imagen: faker.image.imageUrl(),
